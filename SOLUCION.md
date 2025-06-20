@@ -2,11 +2,11 @@
 
 Este readme intenta explicar la solución planteada a la consigna inicial: procesar un archivo CSV de gran tamaño (~80MB) y guardar sus registros en una base de datos MongoDB de manera eficiente.
 
-## ⚙️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 Solamente se ha incluido la libreria "fast-csv" de acuerdo a lo planteado en el enunciado. Esta librería se usa para el procesamiento eficiente de archivos CSV por streaming
 
-## 🚀 Implementación
+## Implementación
 
 El código principal está en `src/controller.js`, en la función `upload`.
 
@@ -17,14 +17,14 @@ Se realizó el procesamiento de la siguiente forma:
 3. Se agrupan documentos en lotes de 1000 y se insertan mediante `Records.insertMany()` para mejorar la performance.
 4. Al finalizar, se elimina el archivo temporal y se devuelve un resumen con la cantidad de documentos insertados y el tiempo de procesamiento.
 
-## 🧪 Validaciones y decisiones técnicas
+## Validaciones y decisiones técnicas
 
 - Se incorporan scripts en el archivo: `package.json`.
 - Se descartan líneas incompletas (sin `id`, `firstname` o `lastname`).
 - Se eliminan los archivos subidos luego del procesamiento.
 - Se eligió `fast-csv` como única librería adicional permitida, ya que permite un control robusto sobre el parsing, incluyendo encabezados, espacios y líneas vacías.
 
-## ⏱ Resultado de ejecución
+## Resultado de ejecución
 
 En pruebas locales:
 
@@ -33,7 +33,7 @@ En pruebas locales:
 - Implementando la libreria `fast-csv` el tiempo total de procesamiento fue aproximadamente **7.5 segundos** (dependiendo del entorno).
 - La colección `records` fue creada en la base de datos local definida en el archivo `.env`.
 
-## ✅ Cómo correr el proyecto
+## Cómo correr el proyecto
 
 1. Clonar este repositorio
 2. Ejecutar `npm install`
@@ -42,7 +42,7 @@ En pruebas locales:
 5. Asegurarse de tener MongoDB corriendo localmente
 6. Ejecutar con: `npm run dev` o `nodemon app.js`
 
-## 📬 Autor
+## Autor
 
 Andrés Medina  
 [https://github.com/andresmedina](https://github.com/andresmedina)
